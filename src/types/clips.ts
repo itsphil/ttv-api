@@ -8,7 +8,7 @@ export interface RequestCreateClip {
     broadcaster_id: string;
     has_delay?: boolean;
 }
-export interface ResponseCreateClip extends ApiResponse<CreateClipItem> { }
+export interface ResponseCreateClip extends ApiResponse<CreateClipItem[]> { }
 
 /**
  * @description Get Clips

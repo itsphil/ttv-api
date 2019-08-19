@@ -7,7 +7,7 @@ import { ApiResponse, DateRange } from './generic';
 export interface RequestGetExtensionAnalytics extends BaseAnalyticsRequest {
     extension_id?: string;
 }
-export interface ResponseGetExtensionAnalytics extends ApiResponse<AnalyticsExtensionReport> { }
+export interface ResponseGetExtensionAnalytics extends ApiResponse<AnalyticsExtensionReport[]> { }
 
 /**
  * @description Get Game Analytics
@@ -16,7 +16,7 @@ export interface ResponseGetExtensionAnalytics extends ApiResponse<AnalyticsExte
 export interface RequestGetGameAnalytics extends BaseAnalyticsRequest {
     game_id: string;
 }
-export interface ResponseGetGameAnalytics extends ApiResponse<AnalyticsGameReport> { }
+export interface ResponseGetGameAnalytics extends ApiResponse<AnalyticsGameReport[]> { }
 
 
 export interface AnalyticsExtensionReport extends BaseAnalyticsReport {
