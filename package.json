@@ -1,0 +1,26 @@
+{
+    "name": "ttv-api",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "tsc -w",
+      "test": "jest"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/itsphil/ttv-api.git"
+    },
+    "author": "Phil Zeelte (@phildotjs)",
+    "bugs": {
+      "url": "https://github.com/itsphil/ttv-api/issues"
+    },
+    "homepage": "https://github.com/itsphil/ttv-api#readme",
+    "devDependencies": {
+        "@types/jest": "^24.0.13",
+        "@types/node": "^12.0.6",
+        "jest": "^24.8.0",
+        "ts-jest": "^24.0.2",
+        "typescript": "^3.5.1"
+    }
+}
