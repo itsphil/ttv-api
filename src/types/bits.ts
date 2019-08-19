@@ -10,7 +10,6 @@ export interface RequestGetBitsLeaderboard {
     started_at?: string;
     user_id?: string;
 }
-
 export interface ResponseGetBitsLeaderboard extends ApiResponse<BitsLeaderboardItem> {
     date_range: DateRange;
     total: number;
@@ -26,7 +25,6 @@ export interface RequestGetExtensionTransactions {
     after?: string;
     first?: number;
 }
-
 export interface ResponseGetExtensionTransactions extends ApiResponse<ExtensionTransaction> {
     date_range: DateRange;
     total: number;
