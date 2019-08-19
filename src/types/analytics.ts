@@ -1,4 +1,4 @@
-import { DateRange } from './generic';
+import { ApiResponse, DateRange } from './generic';
 
 /**
  * @description Get Extension Analytics
@@ -8,6 +8,8 @@ export interface RequestGetExtensionAnalytics extends BaseAnalyticsRequest {
     extension_id?: string;
 }
 
+export interface ResponseGetExtensionAnalytics extends ApiResponse<AnalyticsExtensionReport> { }
+
 /**
  * @description Get Game Analytics
  * @see {@link hhttps://dev.twitch.tv/docs/api/reference/#get-game-analytics}
@@ -15,6 +17,8 @@ export interface RequestGetExtensionAnalytics extends BaseAnalyticsRequest {
 export interface RequestGetGameAnalytics extends BaseAnalyticsRequest {
     game_id: string;
 }
+
+export interface ResponseGetGameAnalytics extends ApiResponse<AnalyticsGameReport> { }
 
 
 export interface AnalyticsExtensionReport extends BaseAnalyticsReport {
