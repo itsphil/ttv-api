@@ -1,5 +1,5 @@
 # ttv-api
-A dev.twitch.tv api wrapper built in Node.js
+dev.twitch.tv api wrapper built in Node.js
 
 ### Todo
 
@@ -7,6 +7,10 @@ A dev.twitch.tv api wrapper built in Node.js
 
 - [ ] Connectivity
 - [ ] Authentication
+- [ ] Custom queries
+- [ ] Command line usage
+- [ ] Command line output
+- [ ] Browser output
 
 #### API Implementations
 
