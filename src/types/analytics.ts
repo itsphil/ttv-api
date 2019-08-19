@@ -12,7 +12,7 @@ export interface RequestGetExtensionAnalytics extends BaseAnalyticsRequest {
  * @description Get Game Analytics
  * @see {@link hhttps://dev.twitch.tv/docs/api/reference/#get-game-analytics}
  */
-export interface RequestGetExtensionAnalytics extends BaseAnalyticsRequest {
+export interface RequestGetGameAnalytics extends BaseAnalyticsRequest {
     game_id: string;
 }
 
