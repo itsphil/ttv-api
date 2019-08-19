@@ -1,5 +1,9 @@
+import * as Services from './services';
+import * as Types from './types';
+
 export class TTVAPI {
-    constructor(private bearer: string) {}
+
+    constructor(private clientId: string) {}
 
     getExtensionAnalytics() {}
 
@@ -19,7 +23,7 @@ export class TTVAPI {
 
     redeemCode() {}
 
-    getTopGames() {}
+    getTopGames(request: Types.RequestGetTopGames) { return Services.GamesService.getTopGames(this.clientId, request); }
 
     getGames() {}
 
