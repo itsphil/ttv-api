@@ -3,6 +3,6 @@ export interface Options {
 }
 
 export interface ConnectionOptions {
-    hostname: string;
-    headers: { [key: string]: string };
+    hostname?: string;
+    headers?: { [key: string]: string };
 }

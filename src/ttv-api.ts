@@ -3,8 +3,9 @@ import * as Types from './types';
 
 export class TTVAPI {
 
-    constructor(clientId: string) {
+    constructor(clientId: string, opts?: Types.Options) {
         Services.StateService.clientId = clientId;
+        Services.StateService.opts = opts;
     }
 
     getExtensionAnalytics() {}

@@ -4,17 +4,15 @@ import { StateService } from '.';
 
 export class ConnectionService {
     static send<T>(path: string, method: string, body: string = ''): Promise<T> {
-        console.log(path, method, body, StateService.clientId);
         return new Promise((resolve, reject) => {
             const req = https.request({
-                hostname: 'api.twitch.tv',
+                hostname: StateService.opts.connection.hostname,
                 path: this.generatePath(path),
                 method,
-                headers: {
+                headers: Object.assign({
                     'Client-ID': StateService.clientId
-                }
+                }, StateService.opts.connection.headers)
             }, (res) => {
-                console.log('WHAT');
                 res.on('data', (d: T) => this.onData<T>(d, resolve));
             });
 
