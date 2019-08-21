@@ -1,4 +1,4 @@
-import { ApiResponse } from './generic';
+import { ApiResponse } from '../generic';
 
 /**
  * @description Create Entitlement Grants Upload URL

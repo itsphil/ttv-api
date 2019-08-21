@@ -1,4 +1,4 @@
-import { ApiResponse, DateRange } from './generic';
+import { ApiResponse, DateRange } from '../generic';
 
 /**
  * @description Get Extension Analytics
