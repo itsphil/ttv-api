@@ -11,14 +11,10 @@ export class ConnectionService {
                     'Client-ID': clientId
                 }
             }, (res) => {
-                res.on('data', (d) => {
-                    resolve(d);
-                });
+                res.on('data', (d: T) => this.onData<T>(d, resolve));
             });
 
-            req.on('error', (error) => {
-                reject(error);
-            });
+            req.on('error', (err) => this.onError(err));
 
             req.write(body);
             req.end();
@@ -28,4 +24,8 @@ export class ConnectionService {
     private static generatePath(path: string): string {
         return `/helix/${path}`;
     }
+
+    private static onData<T>(data: T, resolve): void { }
+
+    private static onError(err: Error): void { }
 }
