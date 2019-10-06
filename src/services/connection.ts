@@ -1,6 +1,6 @@
 import * as https from 'https';
 
-import { StateService } from '.';
+import { LoggerService, StateService } from '.';
 
 export class ConnectionService {
     static send<T>(path: string, method: string, body: string = ''): Promise<T> {
@@ -13,7 +13,11 @@ export class ConnectionService {
                     'Client-ID': StateService.clientId
                 }, StateService.opts.connection.headers)
             }, (res) => {
-                res.on('data', (d: T) => this.onData<T>(d, resolve));
+                res.on('data', (data: T) => {
+                    if(StateService.opts.logging) LoggerService.logJSON(JSON.parse(data.toString()));
+
+                    this.onData<T>(data, resolve);
+                });
             });
 
             req.on('error', (err) => this.onError(err, reject));

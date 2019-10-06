@@ -7,11 +7,21 @@ class StateServiceInstance {
         connection: {
             hostname: 'api.twitch.tv',
             headers: {}
-        }
+        },
+        logging: true
     };
     get opts(): Options { return this._opts; }
     set opts(opts: Options) {
-        if(opts) this._opts = Object.assign(opts, this._opts);
+        if(opts) {
+            this._opts = opts;
+
+            this.validateOpts(opts);
+        }
+    }
+    private validateOpts(opts: Options): void {
+        if((!opts) || (!opts.connection) || !opts.connection.hostname) {
+            throw new Error('invalid options');
+        }
     }
 }
 
