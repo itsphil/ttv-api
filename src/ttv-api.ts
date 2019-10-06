@@ -28,7 +28,7 @@ export class TTVAPI {
 
     getTopGames(request: Types.RequestGetTopGames) { return Services.GamesService.getTopGames(request); }
 
-    getGames() {}
+    getGames(request: Types.RequestGetGames) { return Services.GamesService.getGames(request); }
 
     checkAutomodStatus() {}
 
