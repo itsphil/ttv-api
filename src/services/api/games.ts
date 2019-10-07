@@ -1,4 +1,4 @@
-import { ConnectionService, StateService } from '..';
+import { ConnectionService } from '..';
 import * as Types from '../../types';
 
 export class GamesService {

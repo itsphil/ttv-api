@@ -40,13 +40,13 @@ export class TTVAPI {
 
     getModeratorEvents() {}
 
-    getStreams() {}
+    getStreams(request: Types.RequestGetStreams) { return Services.StreamsService.getStreams(request); }
 
-    getStreamsMetadata() {}
+    getStreamsMetadata(request: Types.RequestGetStreamsMetadata) { return Services.StreamsService.getStreamsMetadata(request); }
 
-    createStreamMarker() {}
+    createStreamMarker(request: Types.RequestCreateStreamMarker) { return Services.StreamsService.createStreamMarker(request); }
 
-    getStreamMarkers() {}
+    getStreamMarkers(request: Types.RequestGetStreamMarkers) { return Services.StreamsService.getStreamMarkers(request); }
 
     getBroadcasterSubscriptions() {}
 

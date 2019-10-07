@@ -3,7 +3,7 @@ import * as https from 'https';
 import { LoggerService, StateService } from '.';
 
 export class ConnectionService {
-    static send<T>(path: string, method: string, params?: object): Promise<T> {
+    static send<T>(path: string, method: string, params?: object, body = ''): Promise<T> {
         console.log(path);
         return new Promise((resolve, reject) => {
             const req = https.request({
@@ -11,7 +11,8 @@ export class ConnectionService {
                 path: this.generatePath(path, params),
                 method,
                 headers: Object.assign({
-                    'Client-ID': StateService.clientId
+                    'Client-ID': StateService.clientId,
+                    'Content-Type': 'application/json'
                 }, StateService.opts.connection.headers)
             }, (res) => {
                 res.on('data', (data: T) => {
@@ -23,7 +24,7 @@ export class ConnectionService {
 
             req.on('error', (err) => this.onError(err, reject));
 
-            req.write('');
+            req.write(body);
             req.end();
         });
     }
